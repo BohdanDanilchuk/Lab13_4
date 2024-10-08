@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор випадкових порад</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://images.wallpaperscraft.ru/image/single/derevo_tekstura_korichnevyj_1319776_1920x1080.jpg'); /* Заміни на своє зображення */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        p {
+            font-size: 1.5rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1.5rem;
+            margin: 20px 0;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #advice {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-top: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .advice-container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 12px;
+            max-width: 80%;
+            margin: 0 auto;
+        }
+    </style>
+    <script>
+        function getRandomAdvice() {
+            var advices = [
+                "Не бійся робити помилки, адже на них ти вчишся.",
+                "Ніколи не відкладай на завтра те, що можна зробити сьогодні.",
+                "Завжди прагни до більшого, але не забувай радіти дрібницям.",
+                "Довіра — це фундамент будь-яких відносин.",
+                "Завжди будь вдячний за те, що маєш.",
+                "Не бійся вийти за межі своєї зони комфорту — там починається справжній розвиток.",
+                "Успіх приходить до тих, хто не боїться ризикувати.",
+                "Робіть те, що вас надихає, і тоді робота стане задоволенням.",
+                "Пам'ятай: кожен новий день — це шанс на новий початок.",
+                "Вір у себе, і світ повірить у тебе!"
+            ];
+            var randomIndex = Math.floor(Math.random() * advices.length);
+            return advices[randomIndex];
+        }
+
+        function showAdvice() {
+            var advice = getRandomAdvice();
+            document.getElementById("advice").textContent = advice;
+        }
+    </script>
+</head>
+<body>
+    <h1>Генератор випадкових порад</h1>
+    <p>Натисни на кнопку, щоб отримати пораду на сьогодні:</p>
+
+    <button onclick="showAdvice()">Отримати пораду</button>
+
+    <div class="advice-container">
+        <p id="advice">Тут з'явиться ваша порада!</p>
+    </div>
+</body>
+</html>
